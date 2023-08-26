@@ -14,6 +14,9 @@ mongoose
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "10mb", extended: "true" }));
+app.get("/", (req, res) => {
+  res.send("Furniture backend");
+});
 app.use("/api/products", productRouter);
 app.use(cors());
 app.listen(process.env.PORT || port, () =>
